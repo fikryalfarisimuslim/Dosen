@@ -69,7 +69,7 @@ public class TeacherStudyMaterialFragment extends StudyMaterialFragment implemen
         getBinding().classMaterial.materialsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         getBinding().classMaterial.materialsRecyclerView.setAdapter(mAdapter);
         mAdapter.setClassMaterials(sManager.getStudyMaterials());
-
+        getBinding().classMaterial.addButton.setVisibility(View.VISIBLE);
         getBinding().classMaterial.addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

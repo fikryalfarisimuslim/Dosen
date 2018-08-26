@@ -1,4 +1,5 @@
-package com.sunway.averychoke.studywifidirect3.controller.teacher_class.quiz;
+package com.sunway.averychoke.studywifidirect3.controller.student_class.meeting;
+
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -10,28 +11,27 @@ import android.view.ViewGroup;
 
 import com.sunway.averychoke.studywifidirect3.R;
 import com.sunway.averychoke.studywifidirect3.controller.SWDBaseFragment;
-import com.sunway.averychoke.studywifidirect3.controller.common_class.quiz.MahasiswaAdapter;
-import com.sunway.averychoke.studywifidirect3.databinding.FragmentViewQuizBinding;
-import com.sunway.averychoke.studywifidirect3.model.Mahasiswa;
+import com.sunway.averychoke.studywifidirect3.controller.student_class.meeting.adapter.ResultMeetingAdapter;
+import com.sunway.averychoke.studywifidirect3.databinding.FragmentQuizResultBinding;
 import com.sunway.averychoke.studywifidirect3.model.Meeting;
 
 /**
- * Created by AveryChoke on 6/4/2017.
+ * Created by AveryChoke on 4/4/2017.
  */
 
-public class ViewQuizFragment extends SWDBaseFragment {
+public class MeetingResultFragment extends SWDBaseFragment {
     public static final String ARGS_QUIZ_KEY = "args_quiz_key";
 
-    private FragmentViewQuizBinding mBinding;
+    private FragmentQuizResultBinding mBinding;
 
     private Meeting mMeeting;
-    private MahasiswaAdapter mAdapter;
+    private ResultMeetingAdapter mAdapter;
 
-    public static ViewQuizFragment newInstance(Meeting meeting) {
+    public static MeetingResultFragment newInstance(Meeting meeting) {
         Bundle args = new Bundle();
         args.putParcelable(ARGS_QUIZ_KEY, meeting);
-        
-        ViewQuizFragment fragment = new ViewQuizFragment();
+
+        MeetingResultFragment fragment = new MeetingResultFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -41,16 +41,13 @@ public class ViewQuizFragment extends SWDBaseFragment {
         super.onCreate(savedInstanceState);
 
         mMeeting = getArguments().getParcelable(ARGS_QUIZ_KEY);
-        // reset answers
-        for (Mahasiswa mahasiswa : mMeeting.getMahasiswa()) {
-            mahasiswa.setUserAnswer("");
-        }
-        mAdapter = new MahasiswaAdapter();
+        mAdapter = new ResultMeetingAdapter();
     }
 
+    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_view_quiz, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_quiz_result, container, false);
         mBinding = DataBindingUtil.bind(rootView);
         return rootView;
     }
@@ -61,6 +58,8 @@ public class ViewQuizFragment extends SWDBaseFragment {
 
         mBinding.questionsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mBinding.questionsRecyclerView.setAdapter(mAdapter);
-        mAdapter.setMahasiswa(mMeeting.getMahasiswa());
+        if (mMeeting != null) {
+            mAdapter.setMahasiswa(mMeeting.getMahasiswa());
+        }
     }
 }

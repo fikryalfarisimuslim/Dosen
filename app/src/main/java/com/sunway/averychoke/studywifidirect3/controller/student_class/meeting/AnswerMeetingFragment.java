@@ -1,4 +1,4 @@
-package com.sunway.averychoke.studywifidirect3.controller.student_class.quiz;
+package com.sunway.averychoke.studywifidirect3.controller.student_class.meeting;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.sunway.averychoke.studywifidirect3.R;
 import com.sunway.averychoke.studywifidirect3.controller.SWDBaseFragment;
-import com.sunway.averychoke.studywifidirect3.controller.student_class.quiz.adapter.AnswerQuestionsAdapter;
+import com.sunway.averychoke.studywifidirect3.controller.student_class.meeting.adapter.AnswerMeetingAdapter;
 import com.sunway.averychoke.studywifidirect3.databinding.FragmentAnswerQuizBinding;
 import com.sunway.averychoke.studywifidirect3.manager.StudentManager;
 import com.sunway.averychoke.studywifidirect3.model.Mahasiswa;
@@ -28,20 +28,20 @@ import com.sunway.averychoke.studywifidirect3.model.Meeting;
  * Created by AveryChoke on 2/4/2017.
  */
 
-public class AnswerQuizFragment extends SWDBaseFragment implements AnswerQuestionsAdapter.SubmitViewHolder.OnSubmitListener {
+public class AnswerMeetingFragment extends SWDBaseFragment implements AnswerMeetingAdapter.SubmitViewHolder.OnSubmitListener {
     public static final String ARGS_QUIZ_KEY = "args_quiz_key";
 
     private FragmentAnswerQuizBinding mBinding;
 
     private StudentManager sManager;
     private Meeting mMeeting;
-    private AnswerQuestionsAdapter mAdapter;
+    private AnswerMeetingAdapter mAdapter;
 
-    public static AnswerQuizFragment newInstance(Meeting meeting) {
+    public static AnswerMeetingFragment newInstance(Meeting meeting) {
         Bundle args = new Bundle();
         args.putParcelable(ARGS_QUIZ_KEY, meeting);
 
-        AnswerQuizFragment fragment = new AnswerQuizFragment();
+        AnswerMeetingFragment fragment = new AnswerMeetingFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,7 +51,7 @@ public class AnswerQuizFragment extends SWDBaseFragment implements AnswerQuestio
         super.onCreate(savedInstanceState);
 
         mMeeting = getArguments().getParcelable(ARGS_QUIZ_KEY);
-        mAdapter = new AnswerQuestionsAdapter(this);
+        mAdapter = new AnswerMeetingAdapter(this);
         sManager = StudentManager.getInstance();
     }
 
@@ -107,7 +107,7 @@ public class AnswerQuizFragment extends SWDBaseFragment implements AnswerQuestio
                         intent.putExtra(ARGS_QUIZ_KEY, (Parcelable) mMeeting);
                         getActivity().setResult(Activity.RESULT_OK, intent);
 
-                        getBaseActivity().changeFragment(QuizResultFragment.newInstance(mMeeting));
+                        getBaseActivity().changeFragment(MeetingResultFragment.newInstance(mMeeting));
                     }
                 })
                 .setNegativeButton(R.string.dialog_no, new DialogInterface.OnClickListener() {

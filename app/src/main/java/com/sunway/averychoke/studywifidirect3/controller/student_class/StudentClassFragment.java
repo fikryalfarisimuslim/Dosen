@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 
 import com.sunway.averychoke.studywifidirect3.R;
 import com.sunway.averychoke.studywifidirect3.controller.SWDBaseFragment;
-import com.sunway.averychoke.studywifidirect3.controller.student_class.quiz.StudentQuizFragment;
+import com.sunway.averychoke.studywifidirect3.controller.student_class.meeting.StudentMeetingFragment;
 import com.sunway.averychoke.studywifidirect3.controller.student_class.study_material.StudentStudyMaterialFragment;
 import com.sunway.averychoke.studywifidirect3.databinding.FragmentClassBinding;
 import com.sunway.averychoke.studywifidirect3.manager.StudentManager;
@@ -104,7 +104,7 @@ public class StudentClassFragment extends SWDBaseFragment {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new StudentQuizFragment();
+                    return new StudentMeetingFragment();
                 default:
                     return new StudentStudyMaterialFragment();
             }

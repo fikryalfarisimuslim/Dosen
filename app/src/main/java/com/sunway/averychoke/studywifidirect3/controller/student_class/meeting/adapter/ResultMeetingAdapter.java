@@ -1,17 +1,14 @@
-package com.sunway.averychoke.studywifidirect3.controller.student_class.quiz.adapter;
+package com.sunway.averychoke.studywifidirect3.controller.student_class.meeting.adapter;
 
-import android.content.res.ColorStateList;
 import android.databinding.DataBindingUtil;
-import android.support.v4.widget.CompoundButtonCompat;
-import android.support.v7.widget.AppCompatRadioButton;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.sunway.averychoke.studywifidirect3.R;
-import com.sunway.averychoke.studywifidirect3.controller.common_class.quiz.MahasiswaViewHolder;
-import com.sunway.averychoke.studywifidirect3.controller.common_class.quiz.MahasiswaAdapter;
+import com.sunway.averychoke.studywifidirect3.controller.common_class.meeting.MahasiswaViewHolder;
+import com.sunway.averychoke.studywifidirect3.controller.common_class.meeting.MahasiswaAdapter;
 import com.sunway.averychoke.studywifidirect3.databinding.CellResultBinding;
 import com.sunway.averychoke.studywifidirect3.model.Mahasiswa;
 
@@ -21,7 +18,7 @@ import java.util.List;
  * Created by AveryChoke on 4/4/2017.
  */
 
-public class ResultQuestionsAdapter extends MahasiswaAdapter {
+public class ResultMeetingAdapter extends MahasiswaAdapter {
     private static final int QUESTION_VH = 101;
     private static final int RESULT_VH = 102;
 

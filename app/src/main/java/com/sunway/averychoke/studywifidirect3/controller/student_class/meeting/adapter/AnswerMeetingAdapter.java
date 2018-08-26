@@ -1,4 +1,4 @@
-package com.sunway.averychoke.studywifidirect3.controller.student_class.quiz.adapter;
+package com.sunway.averychoke.studywifidirect3.controller.student_class.meeting.adapter;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
@@ -7,20 +7,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sunway.averychoke.studywifidirect3.R;
-import com.sunway.averychoke.studywifidirect3.controller.common_class.quiz.MahasiswaAdapter;
+import com.sunway.averychoke.studywifidirect3.controller.common_class.meeting.MahasiswaAdapter;
 import com.sunway.averychoke.studywifidirect3.databinding.CellSubmitBinding;
 
 /**
  * Created by AveryChoke on 3/4/2017.
  */
 
-public class AnswerQuestionsAdapter extends MahasiswaAdapter {
+public class AnswerMeetingAdapter extends MahasiswaAdapter {
     private static final int QUESTION_VH = 101;
     private static final int SUBMIT_VH = 102;
 
     private SubmitViewHolder.OnSubmitListener mListener;
 
-    public AnswerQuestionsAdapter(SubmitViewHolder.OnSubmitListener listener) {
+    public AnswerMeetingAdapter(SubmitViewHolder.OnSubmitListener listener) {
         super();
         mListener = listener;
     }

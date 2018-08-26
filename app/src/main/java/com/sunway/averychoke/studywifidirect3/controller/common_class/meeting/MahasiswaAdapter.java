@@ -1,4 +1,4 @@
-package com.sunway.averychoke.studywifidirect3.controller.common_class.quiz;
+package com.sunway.averychoke.studywifidirect3.controller.common_class.meeting;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

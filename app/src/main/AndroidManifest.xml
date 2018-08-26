@@ -28,16 +28,16 @@
             android:name=".controller.teacher_class.TeacherClassActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity
-            android:name=".controller.teacher_class.quiz.CreateQuizActivity"
+            android:name=".controller.teacher_class.meeting.CreateQuizActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity
-            android:name=".controller.teacher_class.quiz.ViewQuizActivity"
+            android:name=".controller.teacher_class.meeting.ViewMeetingActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity
             android:name=".controller.student_class.StudentClassActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity
-            android:name=".controller.student_class.quiz.AnswerQuizActivity"
+            android:name=".controller.student_class.meeting.AnswerMeetingActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <!-- Service -->

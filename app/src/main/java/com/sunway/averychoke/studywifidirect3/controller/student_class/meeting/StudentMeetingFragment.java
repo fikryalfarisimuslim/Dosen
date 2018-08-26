@@ -1,4 +1,4 @@
-package com.sunway.averychoke.studywifidirect3.controller.student_class.quiz;
+package com.sunway.averychoke.studywifidirect3.controller.student_class.meeting;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -38,7 +38,7 @@ import static android.app.Activity.RESULT_OK;
  * Created by AveryChoke on 29/1/2017.
  */
 
-public class StudentQuizFragment extends SWDBaseFragment implements
+public class StudentMeetingFragment extends SWDBaseFragment implements
         SwipeRefreshLayout.OnRefreshListener,
         ClassMaterialViewHolder.OnClassMaterialSelectListener,
         ClassMaterialsUpdaterListener {
@@ -97,7 +97,7 @@ public class StudentQuizFragment extends SWDBaseFragment implements
         switch (requestCode) {
             case ANSWER_QUIZ_CODE:
                 if (resultCode == RESULT_OK) {
-                    Meeting meeting = data.getParcelableExtra(AnswerQuizActivity.ARGS_QUIZ_KEY);
+                    Meeting meeting = data.getParcelableExtra(AnswerMeetingActivity.ARGS_QUIZ_KEY);
                     if (meeting != null) {
                         mAdapter.replaceClassMaterial(meeting);
                     }
@@ -249,8 +249,8 @@ public class StudentQuizFragment extends SWDBaseFragment implements
     private void answerQuiz(ClassMaterial classMaterial) {
         final Meeting meeting = (Meeting) classMaterial;
 
-        //Intent intent = new Intent(getActivity(), AnswerQuizActivity.class);
-        //intent.putExtra(AnswerQuizActivity.ARGS_QUIZ_KEY, (Parcelable) quiz);
+        //Intent intent = new Intent(getActivity(), AnswerMeetingActivity.class);
+        //intent.putExtra(AnswerMeetingActivity.ARGS_QUIZ_KEY, (Parcelable) quiz);
         //startActivityForResult(intent, ANSWER_QUIZ_CODE);
 
 

@@ -1,4 +1,4 @@
-package com.sunway.averychoke.studywifidirect3.controller.student_class.quiz;
+package com.sunway.averychoke.studywifidirect3.controller.student_class.meeting;
 
 import android.content.DialogInterface;
 import android.databinding.DataBindingUtil;
@@ -16,7 +16,7 @@ import com.sunway.averychoke.studywifidirect3.model.Meeting;
  * Created by AveryChoke on 2/4/2017.
  */
 
-public class AnswerQuizActivity extends SWDBaseActivity {
+public class AnswerMeetingActivity extends SWDBaseActivity {
 
     public static final String ARGS_QUIZ_KEY = "args_quiz_key";
     private ActivityMainContainerBinding mBinding;
@@ -33,7 +33,7 @@ public class AnswerQuizActivity extends SWDBaseActivity {
         Meeting meeting = getIntent().getParcelableExtra(ARGS_QUIZ_KEY);
         if (meeting != null) {
             setTitle(meeting.getName());
-            Fragment fragment = meeting.isAnswered() ? QuizResultFragment.newInstance(meeting) : AnswerQuizFragment.newInstance(meeting);
+            Fragment fragment = meeting.isAnswered() ? MeetingResultFragment.newInstance(meeting) : AnswerMeetingFragment.newInstance(meeting);
             getSupportFragmentManager().beginTransaction()
                     .add(mBinding.containerLayout.getId(), fragment, fragment.getClass().getSimpleName())
                     .addToBackStack(fragment.getClass().getSimpleName())
@@ -53,7 +53,7 @@ public class AnswerQuizActivity extends SWDBaseActivity {
     public void onBackPressed() {
         FragmentManager.BackStackEntry entry = getSupportFragmentManager().getBackStackEntryAt(getSupportFragmentManager().getBackStackEntryCount() - 1);
 
-        if (entry.getName().equals(AnswerQuizFragment.class.getSimpleName())) {
+        if (entry.getName().equals(AnswerMeetingFragment.class.getSimpleName())) {
             final AlertDialog.Builder dialog = new AlertDialog.Builder(this)
                     .setMessage(R.string.unsaved_changes_message)
                     .setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
